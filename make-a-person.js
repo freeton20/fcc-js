@@ -1,36 +1,26 @@
 var Person = function(firstAndLast) {
-    // Only change code below this line  
-
-    this.getFirstName = function(){
-        if(this.FirstName){
-          return this.FirstName;
-        }
-        let arr = firstAndLast.split(" ");
-        return arr[0];            
-    }
-    this.getLastName = function(){
-        if(this.LastName){
-          return this.LastName;
-        }
-        let arr = firstAndLast.split(" ");
-        return arr[1]; 
-    }
-    this.getFullName = function(){
-      return this.getFirstName() + ' ' + this.getLastName();
-    }
-    this.setFirstName = function(FirstName){
-      this.FirstName = FirstName;
-    }
-    this.setLastName = function(LastName){
-      this.LastName = LastName;
-    }
-    this.setFullName = function(firstAndLast){
-       let arr = firstAndLast.split(" ");
-       this.FirstName = arr[0];
-       this.LastName = arr[1];
-    }
+  // Only change code below this line
+  // Complete the method below and implement the others similarly
+  this.getFullName = function() {
+    return firstAndLast;
+  };
+  this.getFirstName = function() {
+    return firstAndLast.split(' ')[0];
+  };
+  this.setFirstName = function(value) {
+    firstAndLast = `${value} ${this.getLastName()}`;
+  };
+  this.getLastName = function() {
+    return firstAndLast.split(' ')[1];
+  };
+  this.setLastName = function(value) {
+    firstAndLast = `${this.getFirstName()} ${value}`;
+  };
+  this.setFullName = function(value) {
+    firstAndLast = value;
+  };
+  return firstAndLast;
 };
 
 var bob = new Person('Bob Ross');
-bob.setFullName("Haskell Curry")
-console.log(bob.getFullName());
+bob.getFullName();
