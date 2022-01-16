@@ -18,7 +18,7 @@ function addTogether(...args) {
     }
 }
 
-let r = addTogether(2)([3]);
+let r = addTogether(2)(3);
 console.log(r);
 
 addTogether(2,3);
